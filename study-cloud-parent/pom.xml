@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.study.cloud</groupId>
+	<artifactId>study-cloud-parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<name>study-cloud-parent</name>
+	<description>Study Cloud Parent</description>
+	<url>http://maven.apache.org</url>
+
+	<!--公共属性定义-->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring.boot.version>2.0.6.RELEASE</spring.boot.version>
+		<spring.cloud.version>Finchley.SR2</spring.cloud.version>
+		<swagger2.version>2.9.2</swagger2.version>
+	</properties>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.6.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<!--写在parent项目的依赖项，就是假设所有子项目都用的上的依赖，可以偷懒不用在所有子项目再次声明-->
+	<dependencies>
+		<!-- 日志 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+			<version>${spring.boot.version}</version>
+		</dependency>
+		<!-- 异步日志依赖包 -->
+		<dependency>
+			<groupId>com.lmax</groupId>
+			<artifactId>disruptor</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+
+		<!--暴露各种指标-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<!--预定义依赖项的version,scope与exclusions,子项目中只需声明groupId, artifactId即可，版本号统一继承这里的-->
+	<dependencyManagement>
+		<dependencies>
+			<!--Spring Cloud-->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!--数据库连接池-->
+			<dependency>
+				<groupId>com.alibaba</groupId><!--https://github.com/alibaba/druid-->
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>1.1.10</version>
+			</dependency>
+
+			<!-- level DB -->
+			<dependency>
+				<groupId>org.iq80.leveldb</groupId>
+				<artifactId>leveldb</artifactId>
+				<version>0.10</version>
+			</dependency>
+			<dependency>
+				<groupId>org.iq80.leveldb</groupId>
+				<artifactId>leveldb-api</artifactId>
+				<version>0.10</version>
+			</dependency>
+
+			<!--工具类-->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>1.2.49</version>
+			</dependency>
+
+			<!-- Swagger2 -->
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${swagger2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>${swagger2.version}</version>
+			</dependency>
+
+			<!-- 日志 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-log4j2</artifactId>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- 设定团队持续集成发布包服务器 -->
+	<distributionManagement>
+		<repository>
+			<!-- ID要和MAVEN中conif/setting.xml 中的server保持一致 -->
+			<id>releases</id>
+			<name>User Project Release</name>
+			<!-- release版本的url地址 -->
+			<url>http://weway.wicp.net:8840/nexus/content/repositories/releases/</url>
+		</repository>
+
+		<snapshotRepository>
+			<!-- ID要和MAVEN中conif/setting.xml 中的server保持一致 -->
+			<id>snapshots</id>
+			<name>User Project SNAPSHOTS</name>
+			<!-- snapshot版本的url地址 -->
+			<url>http://weway.wicp.net:8840/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>central</name>
+			<!-- 配置仓库的地址 -->
+			<url>http://weway.wicp.net:8840/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
