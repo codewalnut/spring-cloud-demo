@@ -20,7 +20,7 @@ public class ConfigClientApplication {
         SpringApplication.run(ConfigClientApplication.class, args);
     }
 
-    @Value("${test}")
+    @Value("${cloud.test}")
     private String test;
 
     @RequestMapping(value = "/test")
