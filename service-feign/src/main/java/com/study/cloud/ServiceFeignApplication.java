@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * 启动程序
+ * Feign提供对服务集群的负载均衡和Hystrix的熔断能力
  *
  * @author KelvinZ
  * @date 2018-10-31 16:21
