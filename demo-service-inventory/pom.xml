@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.study.cloud</groupId>
-    <artifactId>eureka-server</artifactId>
+    <artifactId>demo-service-inventory</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>eureka-server</name>
-    <description>Eureka Server</description>
+    <name>demo-service-inventory</name>
+    <description>库存系统微服务</description>
 
     <parent>
         <groupId>com.study.cloud</groupId>
@@ -24,8 +24,24 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--Swagger2-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+
     </dependencies>
 
     <!--配置文件-->
@@ -34,12 +50,6 @@
             <id>dev</id>
             <properties>
                 <package.environment>dev</package.environment>
-            </properties>
-        </profile>
-        <profile>
-            <id>dev2</id>
-            <properties>
-                <package.environment>dev2</package.environment>
             </properties>
         </profile>
         <profile>
@@ -52,7 +62,7 @@
 
     <!--构建-->
     <build>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>demo-service-inventory</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

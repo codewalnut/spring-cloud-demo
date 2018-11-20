@@ -2,6 +2,8 @@ target
 logs
 *.jar
 *.cmd
+.mvn
+mvnw
 
 ### STS ###
 .apt_generated
