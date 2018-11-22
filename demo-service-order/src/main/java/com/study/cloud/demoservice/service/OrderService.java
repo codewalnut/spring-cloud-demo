@@ -1,9 +1,9 @@
 package com.study.cloud.demoservice.service;
 
 /**
- * 类描述：
+ * 订单服务
  *
- * @author Weway-RG001
+ * @author KelvinZ
  * @date 2018-11-21 15:16
  */
 public interface OrderService {

@@ -11,9 +11,9 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * 类描述：
+ * 订单服务实现
  *
- * @author Weway-RG001
+ * @author Kelvin
  * @date 2018-11-21 15:26
  */
 @Service

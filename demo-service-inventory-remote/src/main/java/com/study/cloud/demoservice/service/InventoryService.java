@@ -18,7 +18,7 @@ public interface InventoryService {
     /**
      * 查询库存数量
      *
-     * @param sku
+     * @param sku 单品
      * @return
      */
     @RequestMapping("/api/inventory/get")
@@ -35,8 +35,8 @@ public interface InventoryService {
     /**
      * 加库存
      *
-     * @param sku
-     * @param amount
+     * @param sku    单品
+     * @param amount 数量
      * @return
      */
     @RequestMapping("/api/inventory/add")
@@ -45,8 +45,8 @@ public interface InventoryService {
     /**
      * 减库存
      *
-     * @param sku
-     * @param amount
+     * @param sku    单品
+     * @param amount 数量
      * @return
      */
     @RequestMapping("/api/inventory/reduce")
