@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @date 2018-10-31 19:30
  */
 @Component
-public class OrderServiceHystrix implements OrderService {
+public class OrderApiServiceHystrix implements OrderApiService {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Override

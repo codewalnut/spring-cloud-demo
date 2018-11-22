@@ -1,4 +1,4 @@
-package com.study.cloud.demoservice.service;
+package com.study.cloud.order.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,8 +9,8 @@ import org.slf4j.LoggerFactory;
  * @author KelvinZ
  * @date 2018-11-22 18:42
  */
-public class OrderServiceHystrix implements OrderService {
-    private static final Logger log = LoggerFactory.getLogger(OrderServiceHystrix.class);
+public class OrderRemoteServiceHystrix implements OrderRemoteService {
+    private static final Logger log = LoggerFactory.getLogger(OrderRemoteServiceHystrix.class);
 
     @Override
     public String add(String customerName, String sku, int amount) {

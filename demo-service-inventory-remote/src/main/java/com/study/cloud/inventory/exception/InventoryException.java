@@ -1,4 +1,4 @@
-package com.study.cloud.demoservice.exception;
+package com.study.cloud.inventory.exception;
 
 /**
  * 库存业务异常

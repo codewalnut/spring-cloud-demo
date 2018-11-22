@@ -1,4 +1,4 @@
-package com.study.cloud.demoservice.service;
+package com.study.cloud.order.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author KelvinZ
  * @date 2018-11-22 18:42
  */
-@FeignClient(value = "DEMO-SERVICE-ORDER", fallback = OrderServiceHystrix.class)
-public interface OrderService {
+@FeignClient(value = "DEMO-SERVICE-ORDER", fallback = OrderRemoteServiceHystrix.class)
+public interface OrderRemoteService {
 
     /**
      * 创建订单

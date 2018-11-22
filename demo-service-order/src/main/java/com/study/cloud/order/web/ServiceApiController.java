@@ -1,6 +1,6 @@
-package com.study.cloud.demoservice.web;
+package com.study.cloud.order.web;
 
-import com.study.cloud.demoservice.service.OrderService;
+import com.study.cloud.order.service.OrderService;
 import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

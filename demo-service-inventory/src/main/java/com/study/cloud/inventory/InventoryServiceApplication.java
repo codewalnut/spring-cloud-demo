@@ -1,8 +1,10 @@
-package com.study.cloud.demoservice;
+package com.study.cloud.inventory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * 主程序入口
@@ -12,6 +14,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
+@EnableFeignClients(basePackages = "com")
+@ComponentScan(basePackages = {"com"})
 public class InventoryServiceApplication {
 
 	public static void main(String[] args) {

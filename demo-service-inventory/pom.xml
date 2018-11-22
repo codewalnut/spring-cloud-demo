@@ -23,6 +23,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.study.cloud</groupId>
+            <artifactId>demo-service-inventory-remote</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>

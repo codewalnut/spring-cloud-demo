@@ -1,6 +1,6 @@
 package com.study.cloud.controller;
 
-import com.study.cloud.service.OrderService;
+import com.study.cloud.service.OrderApiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +18,12 @@ public class ServiceController {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private OrderService orderService;
+    private OrderApiService orderApiService;
 
     @GetMapping("/addOrder")
     public String addOrder(String name, int amount) {
         log.info("addOrder invoked: {}, {}", name, amount);
-        return orderService.addOrder(name, amount);
+        return orderApiService.addOrder(name, amount);
     }
 
 }

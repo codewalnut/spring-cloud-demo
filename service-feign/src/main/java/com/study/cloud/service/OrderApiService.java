@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author KelvinZ
  * @date 2018-10-31 16:49
  */
-@FeignClient(value = "DEMO-SERVICE-ORDER", fallback = OrderServiceHystrix.class)
-public interface OrderService {
+@FeignClient(value = "DEMO-SERVICE-ORDER", fallback = OrderApiServiceHystrix.class)
+public interface OrderApiService {
 
     /**
      * 添加订单服务

@@ -1,4 +1,4 @@
-package com.study.cloud.demoservice.exception;
+package com.study.cloud.order.exception;
 
 /**
  * 订单异常
@@ -8,7 +8,8 @@ package com.study.cloud.demoservice.exception;
  */
 public class OrderException extends Exception {
 
-    public OrderException(String message) {
-        super(message);
-    }
+	public OrderException(String message) {
+		super(message);
+	}
+
 }
