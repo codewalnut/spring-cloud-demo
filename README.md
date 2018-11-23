@@ -10,7 +10,8 @@
 ## 目录结构
 - study-cloud-parent 父项目，定义公共的配置
 - eureka-server 注册中心
-- demo-service 服务提供演示项目，向注册中心注册成为具体服务
+- demo-service-inventory 库存模块的模拟服务
+- demo-service-order 订单模块的模拟服务
 - service-ribbon (rest+ribbon)服务调用演示项目
 - service-feign (Feign)服务调用演示项目
 - service-zuul 路由网关演示项目
@@ -21,6 +22,13 @@
 - @EnableDiscoveryClient vs @EnableEurekaClient
     @EnableDiscoveryClient基于spring-cloud-commons, @EnableEurekaClient基于spring-cloud-netflix。
     如果选用的注册中心是eureka，那么就推荐@EnableEurekaClient，如果是其他的注册中心，那么推荐使用@EnableDiscoveryClient。
+
+- 依赖其他服务的FeignClient接口包时，报Autowired找不到Bean的问题
+    当服务消费端需要调用外部服务时，通常的做法是该服务提供一个相应的定义了FeignClient包，其他服务依赖这个包即可。
+    但是由于包扫描会默认从注解的位置开始扫描。一般@EnableFeignClients的注解是加在*****Application启动类上面的，
+    如果FeignClient包和Application不在一个包路径下，会出现Bean加载不到的情况，解决方法有两种：
+    * 添加 @EnableFeignClients(basePackages = "com") 和 @ComponentScan(basePackages = {"com"})，进行显式声明；
+    * 把*****Application的类移动到公共路径下，减少注解复杂度；
 
 
 ## 版本历史

@@ -14,8 +14,13 @@ public class OrderRemoteServiceHystrix implements OrderRemoteService {
 
     @Override
     public String add(String customerName, String sku, int amount) {
-        log.error("get fallback {}", sku);
+        log.error("add fallback {}", sku);
         return "FALLBACK";
     }
 
+    @Override
+    public String getAll() {
+        log.error("getAll fallback");
+        return "FALLBACK";
+    }
 }

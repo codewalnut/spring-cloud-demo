@@ -24,4 +24,7 @@ public interface OrderRemoteService {
     @RequestMapping("/api/order/add")
     String add(@RequestParam("customerName") String customerName, @RequestParam("sku") String sku, @RequestParam("amount") int amount);
 
+    @RequestMapping("/api/order/getAll")
+    String getAll();
+
 }
