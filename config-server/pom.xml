@@ -8,7 +8,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>config-server</name>
+    <name>${project.artifactId}</name>
     <description>Config Server</description>
 
     <parent>

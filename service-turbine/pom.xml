@@ -8,7 +8,7 @@
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>service-turbine</name>
+	<name>${project.artifactId}</name>
 	<description>turbine demo</description>
 
 	<parent>

@@ -8,7 +8,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>demo-service-order</name>
+    <name>${project.artifactId}</name>
     <description>订单系统微服务</description>
 
     <parent>
