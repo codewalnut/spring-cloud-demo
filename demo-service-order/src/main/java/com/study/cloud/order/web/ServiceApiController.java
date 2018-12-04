@@ -19,7 +19,7 @@ import java.util.Map;
  * @date 2018-10-25
  */
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/api")
 @Api(tags = {"订单服务接口"})
 public class ServiceApiController {
     private static final Logger log = LoggerFactory.getLogger(ServiceApiController.class);

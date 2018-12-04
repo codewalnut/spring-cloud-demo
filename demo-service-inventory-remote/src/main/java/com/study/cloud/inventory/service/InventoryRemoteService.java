@@ -21,7 +21,7 @@ public interface InventoryRemoteService {
 	 * @param sku 单品
 	 * @return 查询结果
 	 */
-	@RequestMapping("/api/inventory/get")
+	@RequestMapping("/api/get")
 	boolean get(@RequestParam("sku") String sku);
 
 	/**
@@ -29,7 +29,7 @@ public interface InventoryRemoteService {
 	 *
 	 * @return 查询结果
 	 */
-	@RequestMapping("/api/inventory/get")
+	@RequestMapping("/api/getAll")
 	Map<String, Integer> getAll();
 
 	/**
@@ -39,7 +39,7 @@ public interface InventoryRemoteService {
 	 * @param amount 数量
 	 * @return 增加后的库存量
 	 */
-	@RequestMapping("/api/inventory/add")
+	@RequestMapping("/api/add")
 	boolean add(@RequestParam("sku") String sku, @RequestParam("amount") int amount);
 
 	/**
@@ -49,7 +49,7 @@ public interface InventoryRemoteService {
 	 * @param amount 数量
 	 * @return 减少后的库存量
 	 */
-	@RequestMapping("/api/inventory/reduce")
+	@RequestMapping("/api/reduce")
 	boolean reduce(@RequestParam("sku") String sku, @RequestParam("amount") int amount);
 
 }

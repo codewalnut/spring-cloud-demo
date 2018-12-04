@@ -21,10 +21,10 @@ public interface OrderRemoteService {
      * @param amount       数量
      * @return 创建结果
      */
-    @RequestMapping("/api/order/add")
+    @RequestMapping("/api/add")
     String add(@RequestParam("customerName") String customerName, @RequestParam("sku") String sku, @RequestParam("amount") int amount);
 
-    @RequestMapping("/api/order/getAll")
+    @RequestMapping("/api/getAll")
     String getAll();
 
 }
