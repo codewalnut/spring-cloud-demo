@@ -5,16 +5,18 @@ import com.google.common.base.MoreObjects;
 import java.time.LocalDateTime;
 
 /**
- * 类描述：
+ * 订单类
  *
- * @author Weway-RG001
+ * @author KelvinZ
  * @date 2018-11-23 15:58
  */
 public class Order {
     private String orderNo;
     private String customerName;
+    // 品类
     private String sku;
     private int amount;
+    // 下单时间
     private LocalDateTime ctime;
 
     public Order(String orderNo, String customerName, String sku, int amount) {
