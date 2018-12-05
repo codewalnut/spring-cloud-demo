@@ -2,24 +2,22 @@
 本项目演示SpringCloud最小必须配置、代码；用于学习研究用途。
 
 ## 依赖介绍
-略
+项目统一使用spring-boot-starter-log4j2作为日志框架。
 
 ## 使用说明
 略
 
 ## 目录结构
 - study-cloud-parent 父项目，定义公共的配置
-- eureka-server 注册中心，使用端口876*
-- demo-service-inventory 库存模块的模拟服务，使用端口810*
+- eureka-server 注册中心，规划端口：8761~8769
+- demo-service-inventory 库存模块的模拟服务，规划端口8100~8109
 - demo-service-inventory-remote 库存模块的服务接口包
-- demo-service-order 订单模块的模拟服务，使用端口811*
+- demo-service-order 订单模块的模拟服务，规划端口8110~8119
 - demo-service-order-remote 订单模块服务接口包
-- service-ribbon (rest+ribbon)服务调用演示项目，使用端口820*
-- service-feign (Feign)服务调用演示项目，使用端口821*
-- service-zuul 路由网关演示项目，使用端口822*
-- service-turbine Turbine监控项目，使用端口830*
-- config-server 配置中心演示项目，使用端口900*
-- config-client 配置消费者演示项目，使用端口910*
+- service-zuul 路由网关演示项目，规划端口8220~8229
+- service-turbine Turbine监控项目，规划端口8300~8309
+- config-server 配置中心演示项目，规划端口9000~9009
+- config-client 配置消费者演示项目，规划端口9100~9109
 
 ## 常见问题
 - @EnableDiscoveryClient vs @EnableEurekaClient
