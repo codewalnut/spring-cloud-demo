@@ -35,5 +35,7 @@
 
 - 如何从配置中心刷新配置：访问任何一个配置客户端的 http://host:port/actuator/bus-refresh
 
+- 在配置中心配置encrypt.key可以对配置进行加解密，加解密可以在敏感值前面加上{cipher}，.yml配置文件需要使用单引号括起来要解密的内容，.properties文件中的加密值不得用引号括起来。否则，该值不会被解密。
+
 ## 版本历史(History)
 + 1.0.0 初始版本
