@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
- * 主程序入口
+ * Eureka作为服务注册与发现的组件
  *
  * @author KelvinZ
  * @date 2018-10-25
@@ -18,8 +18,8 @@ public class EurekaServerApplication {
     private static Logger log = LoggerFactory.getLogger(EurekaServerApplication.class);
 
     public static void main(String[] args) {
-        log.info("Eureka Server booting ...");
+        log.info("<<<<<<<<< Eureka Server booting >>>>>>>>>");
         SpringApplication.run(EurekaServerApplication.class, args);
-        log.info("Eureka Server booting finished ...");
+        log.info("<<<<<<<<< Eureka Server booting finished >>>>>>>>>");
     }
 }

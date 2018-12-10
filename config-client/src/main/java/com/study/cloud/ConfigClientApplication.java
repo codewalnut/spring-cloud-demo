@@ -23,10 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RefreshScope
 public class ConfigClientApplication {
-    private Logger log = LoggerFactory.getLogger(this.getClass());
+    private static final Logger log = LoggerFactory.getLogger(ConfigClientApplication.class);
 
     public static void main(String[] args) {
+        log.info("<<<<<<<<< Config Client booting >>>>>>>>>");
         SpringApplication.run(ConfigClientApplication.class, args);
+        log.info("<<<<<<<<< Config Client booting finished >>>>>>>>>");
     }
 
     @Value("${cloud.test}")

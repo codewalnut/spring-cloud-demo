@@ -1,5 +1,6 @@
 package com.study.cloud.order.web;
 
+import com.study.cloud.order.config.ServiceConfiguration;
 import com.study.cloud.order.domain.Order;
 import com.study.cloud.order.service.OrderService;
 import io.swagger.annotations.Api;
@@ -27,11 +28,19 @@ public class ServiceApiController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private ServiceConfiguration serviceConfiguration;
+
     @Value("${server.port}")
     private String port;
 
     @Value("${spring.application.name}")
     private String appName;
+
+    @RequestMapping("/version")
+    public String getVersion() {
+        return serviceConfiguration.toString();
+    }
 
     @RequestMapping("/add")
     public String add(String customerName, String sku, int amount) {

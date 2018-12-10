@@ -33,7 +33,7 @@
 
 - 在properties或者yaml的值表达式里面，出现形如${REGISTRY_SERVER_PASSWORD:abcd1234}的写法时，表示尝试去读取冒号前的变量值，如果读取不到则用冒号后面的作为默认值。
 
-
+- 如何从配置中心刷新配置：访问任何一个配置客户端的 http://host:port/actuator/bus-refresh
 
 ## 版本历史(History)
 + 1.0.0 初始版本
