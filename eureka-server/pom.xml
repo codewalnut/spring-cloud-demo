@@ -18,9 +18,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <properties>
-    </properties>
-
+    <!--依赖项-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
