@@ -5,7 +5,19 @@
 项目统一使用spring-boot-starter-log4j2作为日志框架。
 
 ## 使用说明（Usage）
-略
+依次启动：
+- eureka-server，访问 http://localhost:8761
+- config-server，访问 http://localhost:9000/encrypt/status
+- zipkin-server，访问 http://localhost:9411
+启动
+- demo-service-inventory，访问 http://localhost:8100/api/version 
+- demo-service-order，访问 http://localhost:8110/api/version
+启动
+- service-zuul，访问 http://192.168.1.88:8220/demo-service-inventory/api/version?token=1
+                     http://192.168.1.88:8220/demo-service-order/api/version?token=1 ,
+                     http://192.168.1.88:8220/demo-service-order/api/add?customerName=Kelvin&sku=%E6%89%8B%E6%9C%BA&amount=1&token=kelvin（生成订单）,
+- service-turbine，访问 http://localhost:8300/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8300%2Fturbine.stream
+
 
 ## 目录结构（Structure）
 - study-cloud-parent 父项目，定义公共的配置
