@@ -39,12 +39,6 @@
             </properties>
         </profile>
         <profile>
-            <id>dev2</id>
-            <properties>
-                <package.environment>dev2</package.environment>
-            </properties>
-        </profile>
-        <profile>
             <id>prd</id>
             <properties>
                 <package.environment>prd</package.environment>
