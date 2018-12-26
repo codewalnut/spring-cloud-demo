@@ -2,64 +2,58 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.study.cloud</groupId>
-    <artifactId>demo-service-inventory</artifactId>
-    <version>1.0.0</version>
-    <packaging>jar</packaging>
-
-    <name>${project.artifactId}</name>
-    <description>库存系统微服务</description>
-
     <parent>
         <groupId>com.study.cloud</groupId>
         <artifactId>study-cloud-parent</artifactId>
         <version>1.0.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <groupId>com.study.cloud</groupId>
+    <artifactId>monitor</artifactId>
+    <version>1.0.0</version>
+    <name>${project.artifactId}</name>
+    <description>Spring Boot Admin Server for Spring Cloud</description>
+    <packaging>jar</packaging>
 
     <properties>
+        <java.version>1.8</java.version>
+        <spring-boot-admin.version>2.0.4</spring-boot-admin.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.study.cloud</groupId>
-            <artifactId>demo-service-inventory-remote</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+        <!--服务注册-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        <!--服务注册-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
         <!--监控相关-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>de.codecentric</groupId>-->
+            <!--<artifactId>spring-boot-admin-starter-client</artifactId>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.jolokia</groupId>
+            <artifactId>jolokia-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
         </dependency>
         <!--监控相关-->
 
@@ -73,19 +67,19 @@
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
         <!--配置中心相关-->
-
-        <!--Swagger2在线接口文档-->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-        </dependency>
-        <!--Swagger2在线接口文档-->
-
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <!--配置文件-->
     <profiles>
@@ -103,7 +97,6 @@
         </profile>
     </profiles>
 
-    <!--构建-->
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
