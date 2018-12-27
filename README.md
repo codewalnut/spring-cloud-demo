@@ -22,14 +22,13 @@
 ## 目录结构（Structure）
 - study-cloud-parent 父项目，定义公共的配置
 - eureka-server 注册中心，规划端口：8761~8769
+- config-server 配置中心演示项目，规划端口9000~9009
 - demo-service-inventory 库存模块的模拟服务，规划端口8100~8109
 - demo-service-inventory-remote 库存模块的服务接口包
 - demo-service-order 订单模块的模拟服务，规划端口8110~8119
 - demo-service-order-remote 订单模块服务接口包
 - service-zuul 路由网关演示项目，规划端口8220~8229
 - service-turbine Turbine监控项目，规划端口8300~8309
-- config-server 配置中心演示项目，规划端口9000~9009
-- config-client 配置消费者演示项目，规划端口9100~9109
 
 ## 常见问题(FAQ)
 - @EnableDiscoveryClient vs @EnableEurekaClient
