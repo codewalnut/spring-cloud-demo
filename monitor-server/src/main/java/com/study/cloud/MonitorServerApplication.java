@@ -19,12 +19,12 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 @Configuration
 @EnableAutoConfiguration
 @EnableAdminServer
-public class MonitorApplication {
-    private final static Logger log = LoggerFactory.getLogger(MonitorApplication.class);
+public class MonitorServerApplication {
+    private final static Logger log = LoggerFactory.getLogger(MonitorServerApplication.class);
 
     public static void main(String[] args) {
         log.info("<<<<<<<<< Monitor Server booting >>>>>>>>>");
-        SpringApplication.run(MonitorApplication.class, args);
+        SpringApplication.run(MonitorServerApplication.class, args);
         log.info("<<<<<<<<< Monitor Server booting finished >>>>>>>>>");
     }
 

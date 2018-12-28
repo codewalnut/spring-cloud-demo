@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.study.cloud</groupId>
-    <artifactId>monitor</artifactId>
+    <artifactId>monitor-server</artifactId>
     <version>1.0.0</version>
     <name>${project.artifactId}</name>
     <description>Spring Boot Admin Server for Spring Cloud</description>
