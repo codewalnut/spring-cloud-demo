@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private String contextPath;
 
     @Autowired
-    Environment env;
+    private Environment env;
 
     /**
      * 仅对监控接口进行访问安全校验限制
@@ -39,6 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().ignoringAntMatchers(contextPath + "/actuator/**");
         http.authorizeRequests()
+                .antMatchers(contextPath + "/turbine.stream").permitAll()
                 .antMatchers(contextPath + "/actuator/**").authenticated()
                 .anyRequest().permitAll()
                 .and().httpBasic();
