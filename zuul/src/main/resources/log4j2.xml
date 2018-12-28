@@ -5,7 +5,7 @@
 <Configuration status="WARN" monitorInterval="30">
     <!-- 变量配置 -->
     <Properties>
-        <Property name="APP_NAME">service-zuul</Property>
+        <Property name="APP_NAME">zuul</Property>
         <Property name="LOG_HOME">./logs</Property>
         <Property name="FILE_LOG_PATTERN">%d %-5level [%t] %c : %msg%n</Property>
         <!--在控制台下显示彩色日志-->
